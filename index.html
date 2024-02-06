@@ -4,20 +4,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <title>RickAndMortyVerse</title>
 </head>
 
-<body>
-  <section class="" id="">
-    <div class="" id="">
-      <video class="fixed right-0 bottom-0 w-auto h-auto min-w-full min-h-full -z-1" autoplay muted loop id="videoBG">
+<body class="bg-black">
+  <section class="relative min-h-screen flex flex-col justify-center items-center">
+    <div class="absolute inset-0 z-0">
+      <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop id="videoBG">
         <source src="./assets/mylivewallpapers.com-Rick-and-Morty-Run-the-Jewels.mp4" type="video/mp4">
       </video>
+      <div class="absolute inset-0 bg-black opacity-60"></div>
     </div>
-    <div class="fixed top-0 left-0 w-full h-full bg-black opacity-50 z-10" id="mascara"></div>
+    <div class="absolute top-0 left-0 w-full text-white text-center">
+      <img src="./assets/logo_top.webp" class="mx-auto my-4 w-48 sm:w-72" alt="Logo Rick And Morty">
+    </div>
+    <div class="z-10 relative">
+      <!-- Div para os elementos h2 -->
+      <div class="flex flex-col justify-center items-center text-white text-center">
+        <h2 class="font-['Open_Sans'] text-3xl sm:text-7xl text-white font-bold mb-2 sm:mb-4 opacity-70">Rick and Morty Verse</h2>
+        <h2 class="text-sm sm:text-2xl">Explore o universo da série Rick And Morty</h2>
+      </div>
+    </div>
   </section>
+
+  <section class="relative min-h-screen flex flex-col justify-center items-center">
+
+  </section>
+
+
 
   <script src="/js/app.js"></script>
 </body>
