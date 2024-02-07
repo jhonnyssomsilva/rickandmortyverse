@@ -1,3 +1,6 @@
+const fetch = require("node-fetch");
+const fs = require("fs");
+
 const fetchCharacters = async (page) => {
   const url = `https://rickandmortyapi.com/api/character?page=${page}`;
   const response = await fetch(url);
@@ -15,10 +18,14 @@ const getAllCharacters = async () => {
 };
 
 const saveCharactersToFile = async (characters) => {
-  const data = JSON.stringify(characters);
-  const filename = "personagens.json";
-  const file = new File([data], filename, { type: "application/json" });
-  await saveAs(file);
+  try {
+    const filename = "personagens.json";
+    const filePath = `./personagens/${filename}`;
+    fs.writeFileSync(filePath, JSON.stringify(characters, null, 2));
+    console.log("Dados gravados com sucesso no arquivo personagens.json");
+  } catch (error) {
+    console.error("Erro ao gravar os dados no arquivo:", error);
+  }
 };
 
 getAllCharacters().then(saveCharactersToFile);
