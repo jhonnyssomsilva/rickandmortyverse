@@ -1,3 +1,5 @@
+// gerando arquivo json com a lista de personagens
+
 const axios = require("axios");
 const fs = require("fs");
 
