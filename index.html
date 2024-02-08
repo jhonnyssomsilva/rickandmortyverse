@@ -38,27 +38,40 @@
 
   <section class="min-h-screen flex flex-col bg-slate-300">
     <div class="flex flex-col mt-10 text-center">
-      <h2 class="font-['Open_Sans'] text-2xl sm:text-4xl text-gray-800 font-bold mb-2 sm:mb-10 opacity-70">
+      <h2 class="font-['Open_Sans'] text-2xl sm:text-4xl text-gray-800 font-bold mb-10 sm:mb-10">
         Pesquise personagens, locais e episódios
       </h2>
     </div>
-    <div class="font-['Open_Sans'] sm:mb-2 sm:ml-48 ml-16  sm:mt-32 mt-7 text-xl tracking-tight text-left text-gray-700 sm:text-3xl">
+
+    <div class="font-['Open_Sans'] sm:-mb-40 sm:ml-56 ml-16 font-semibold mb-4 sm:mt-44 mt-7  text-xl tracking-tight text-left text-gray-700 sm:text-3xl">
       <h2>Personagens</h2>
     </div>
-    <div class="w-600-custom h-auto ml-48 border border-gray-400 bg-gray-100 shadow-lg flex items-center">
-      <img src="./assets/1.jpeg" class="w-auto h-auto mr-4 sm:mr-8 ml-4 sm:ml-0" alt="Imagem">
-      <div class="flex flex-col justify-center">
-        <h2 class="text-xl font-bold mb-2">Personagem</h2>
-        <p class="mb-4">Select</p>
-        <h2 class="text-xl font-bold mb-2">Espécie</h2>
-        <p class="mb-4">Select</p>
-        <h2 class="text-xl font-bold mb-2">Localização atual</h2>
-        <p class="mb-4">Select</p>
+
+    <div class="flex items-center justify-between">
+      <div class="sm:w-[600px] w-[280px] sm:h-auto h-auto sm:ml-56 ml-16 sm:-mt-20 shadow-lg flex items-center">
+        <img src="./assets/1.jpeg" class="sm:w-auto sm:h-auto mr-4 sm:mr-8 sm:ml-0" alt="Imagem 1">
+        <div class="flex flex-col justify-center">
+          <h2 class="font-['Open_Sans'] text-xl text-gray-500 mb-2">Personagem:</h2>
+          <p class="font-['Open_Sans'] font-bold text-xl mb-4" id="personagem-personagem">Select</p>
+          <h2 class="font-['Open_Sans'] text-xl text-gray-500 mb-2">Espécie:</h2>
+          <p class="font-['Open_Sans'] font-bold text-xl mb-4" id="personagem-especie">Select</p>
+          <h2 class="font-['Open_Sans'] text-xl text-gray-500 mb-2">Localização atual:</h2>
+          <p class="font-['Open_Sans'] font-bold text-xl mb-4" id="personagem-localizacao">Select</p>
+        </div>
       </div>
+      <div class="hidden sm:flex sm:mr-56 -mt-36">
+        <img src="./assets/rickandmorty_dedo.png" class="w-[800px] h-auto" alt="Imagem 2">
+      </div>
+    </div>
+    <div class="sm:mb-56">
+      <select class="border border-gray-400 sm:p-2 p-2 pr-16 rounded-lg shadow-lg sm:w-96 sm:ml-56 ml-16 sm:mb-32">
+        <option value="" id="select" disabled selected class="font-['Open_Sans']">Selecione o personagem</option>
+      </select>
     </div>
   </section>
 
-  <script src="/js/app.js"></script>
+  <script src=" /js/app.js">
+  </script>
 </body>
 
 </html>
