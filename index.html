@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" href="./assets/rickandmorty-planet.png" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <title>RickAndMortyVerse</title>
 </head>
@@ -13,7 +14,7 @@
 <body class="bg-black">
   <section class="relative min-h-screen flex flex-col justify-center items-center">
     <div class="absolute inset-0 z-0">
-      <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop id="videoBG">
+      <video class="absolute inset-0 sm:w-full sm:h-full h-full w-full object-cover" autoplay muted loop id="videoBG">
         <source src="./assets/mylivewallpapers.com-Rick-and-Morty-Run-the-Jewels.mp4" type="video/mp4" />
       </video>
       <div class="absolute inset-0 bg-black opacity-60"></div>
@@ -33,28 +34,29 @@
     </div>
   </section>
 
-  <section class=" min-h-screen flex flex-col bg-slate-300">
+  <!-- segunda secao  -->
+
+  <section class="min-h-screen flex flex-col bg-slate-300">
     <div class="flex flex-col mt-10 text-center">
-      <h2 class="font-['Open_Sans'] text-xl sm:text-4xl text-black font-bold mb-2 sm:mb-10 opacity-70">Pesquise personagens, locais e episódios</h2>
+      <h2 class="font-['Open_Sans'] text-2xl sm:text-4xl text-gray-800 font-bold mb-2 sm:mb-10 opacity-70">
+        Pesquise personagens, locais e episódios
+      </h2>
     </div>
-    <div class="font-['Open_Sans'] mb-2 text-3xl font-bold tracking-tight text-left text-gray-700 ml-20 mt-4">
+    <div class="font-['Open_Sans'] sm:mb-2 sm:ml-48 ml-16  sm:mt-32 mt-7 text-xl tracking-tight text-left text-gray-700 sm:text-3xl">
       <h2>Personagens</h2>
     </div>
-    <div class="ml-20 mt-2">
-      <div class="flex flex-col items-stretch border border-gray-400 rounded-3xl shadow-lg md:flex-row md:max-w-xl ">
-        <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="./assets/1.jpeg" alt="" />
-        <div class="flex flex-col justify-between p-4 leading-normal">
-          <h2 class="font-['Open_Sans'] text-xl font-semibold text-left text-gray-600">Personagem</h2>
-          <p class="font-['Open_Sans'] text-xl text-gray-800 mb-2" id="createpersonagem">text</p>
-          <h2 class="font-['Open_Sans'] text-xl font-semibold text-left text-gray-600">Espécie</h2>
-          <p class="font-['Open_Sans'] text-xl text-gray-800 mb-2" id="createespecie">text</p>
-          <h2 class="font-['Open_Sans'] text-xl font-semibold text-left text-gray-600">Localização atual</h2>
-          <p class="font-['Open_Sans'] text-xl text-gray-800 mb-2" id="createlocalizacao">text</p>
-        </div>
+    <div class="w-600-custom h-auto ml-48 border border-gray-400 bg-gray-100 shadow-lg flex items-center">
+      <img src="./assets/1.jpeg" class="w-auto h-auto mr-4 sm:mr-8 ml-4 sm:ml-0" alt="Imagem">
+      <div class="flex flex-col justify-center">
+        <h2 class="text-xl font-bold mb-2">Personagem</h2>
+        <p class="mb-4">Select</p>
+        <h2 class="text-xl font-bold mb-2">Espécie</h2>
+        <p class="mb-4">Select</p>
+        <h2 class="text-xl font-bold mb-2">Localização atual</h2>
+        <p class="mb-4">Select</p>
       </div>
+    </div>
   </section>
-
-
 
   <script src="/js/app.js"></script>
 </body>
