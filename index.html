@@ -62,7 +62,7 @@
         </div>
         <div>
           <div class="mt-3 text-center lg:text-left lg:m-0 lg:mt-3" id="select-personagens">
-            <select class="px-16 py-1 lg:px-24 rounded-lg shadow-lg text-base lg:text-xl lg:mt-1" name="" id="">
+            <select class="px-16 py-1 lg:px-auto rounded-lg shadow-lg text-base lg:text-xl lg:mt-1" name="" id="">
               <option value="">Selecione o personagem</option>
             </select>
           </div>
@@ -93,11 +93,11 @@
           </div>
           <div class="lg:flex-col">
             <div class="mt-3 text-center lg:text-left lg:m-0 lg:mt-3" id="select-personagens">
-              <select class="px-16 py-1 lg:px-24 lg:text-center rounded-lg shadow-lg text-base lg:text-xl lg:mt-1 mb-3" name="" id="">
+              <select class="px-16 py-1 lg:px-auto lg:text-center rounded-lg shadow-lg text-base lg:text-xl lg:mt-1 mb-3" name="" id="">
                 <option value="">Selecione a Localização</option>
               </select>
               <div class="lg:flex-col">
-                <select class="px-16 py-1 lg:px-24 lg:text-center rounded-lg shadow-lg text-base lg:text-xl lg:mt-1" name="" id="">
+                <select class="px-16 py-1 lg:px-auto lg:text-center rounded-lg shadow-lg text-base lg:text-xl lg:mt-1" name="" id="">
                   <option value="">Selecione o personagem</option>
                 </select>
               </div>
@@ -106,7 +106,7 @@
         </div>
       </div>
       <div class="lg:mt-[34rem]">
-        <div class="lg:mt-20 items-center lg:mx-1 min-h-screen">
+        <div class="lg:mt-20 items-center lg:mx-1 min-h-screen mt-28">
           <div class=" font-semibold mt-7 text-lg text-gray-700 lg:text-3xl text-center lg:text-start lg:ml-56 lg:mt-52">
             <h2 class="font-['Open_Sans']">Episódios</h2>
           </div>
@@ -116,22 +116,27 @@
                 <img class="relative w-44 h-52 lg:w-60 lg:h-60" src="./assets/Rick-and-Morty-Planetina.jpg" alt="Imagem dos personagens">
               </div>
               <div class="lg:ml-2 p-4 lg:p-6 flex flex-col justify-center lg:col-span-1">
-                <h2 class="text-gray-500 font-semibold text-lg lg:text-xl">Personagem:</h2>
+                <h2 class="text-gray-500 font-semibold text-lg lg:text-xl">Nome:</h2>
                 <p class="text-xl lg:text-2xl">texto1</p>
-                <h2 class="text-gray-500 font-semibold text-lg lg:text-xl">Espécie:</h2>
+                <h2 class="text-gray-500 font-semibold text-lg lg:text-xl">Tag:</h2>
                 <p class="text-xl lg:text-2xl">texto1</p>
-                <h2 class="text-gray-500 font-semibold text-lg lg:text-xl">Localização:</h2>
+                <h2 class="text-gray-500 font-semibold text-lg lg:text-xl">Lançamento:</h2>
                 <p class="text-xl lg:text-2xl">texto1</p>
               </div>
             </div>
             <div class="hidden lg:flex lg:-mt-36 lg:mr-32 lg:-ml-24 ">
               <img class="absolute lg:-mt-40 lg:w-[54rem] lg:h-[54rem]" src="./assets/Crashing_Ship.png" alt="Rick and Morty mostrando o dedo do meio">
             </div>
-            <div>
+            <div class="lg:flex-col">
               <div class="mt-3 text-center lg:text-left lg:m-0 lg:mt-3" id="select-personagens">
-                <select class="px-16 py-1 lg:px-24 rounded-lg shadow-lg text-base lg:text-xl lg:mt-1" name="" id="">
-                  <option value="">Selecione o personagem</option>
+                <select class="px-16 py-1 lg:px-auto lg:text-center rounded-lg shadow-lg text-base lg:text-xl lg:mt-1 mb-3" name="" id="">
+                  <option value="">Selecione o episódio</option>
                 </select>
+                <div class="lg:flex-col">
+                  <select class="px-12 py-1 lg:px-auto lg:text-center rounded-lg shadow-lg text-base lg:text-xl lg:mt-1" name="" id="">
+                    <option value="">Selecione o personagem</option>
+                  </select>
+                </div>
               </div>
             </div>
           </div>
@@ -139,7 +144,20 @@
       </div>
     </div>
   </section>
-  <script src=" /js/app.js"></script>
+  <footer class="bg-gradient-to-t from-green-950 to-green-600 grid-cols-2 lg:-mt-36 -mt-36">
+    <div class="flex justify-center lg:flex lg:justify-end lg:mr-36">
+      <img class="opacity-10 lg:mr-28" src="./assets/58f37720a4fa116215a9240f.png" alt="">
+      <h2 class="absolute mt-4 text-center text-white text-lg lg:mt-24 lg:text-3xl lg:text-gray-200"><a href="https://rickandmortyapi.com/api"></a>Site desenvolvido usando: https://rickandmortyapi.com/api</h2>
+      <h2 class="absolute mt-20 text-sm lg:text-lg lg:mt-56 lg:mr-28 text-gray-200">Feito por Jhonnyssom Silva</h2>
+      <a href="https://github.com/jhonnyssomsilva" class="absolute filter brightness-0 invert opacity-90 w-6 h-6 mt-28 ml-10 lg:ml-10 lg:w-10 lg:h-10 lg:mt-52 "><img class="" src="./assets/25231.png" alt=""></a>
+      <a href="https://www.instagram.com/felipecrim/" class="absolute filter brightness-0 invert opacity-90 w-6 h-6 mt-28 mr-10 lg:mr-14 lg:w-10 lg:h-10 lg:mt-52"><img src="./assets/3661391.png" alt=""></a>
+    </div>
+    <div class="relative lg:-mt-96 lg:ml-32 hidden lg:block">
+      <img class="lg:w-[40rem] lg:h-[28rem]" src="./assets/rickandmorty_footer.png" alt="">
+    </div>
+    <script src=" /js/app.js"></script>
+  </footer>
+
 </body>
 
 </html>
