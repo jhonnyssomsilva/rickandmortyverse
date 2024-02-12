@@ -33,48 +33,113 @@
       </div>
     </div>
   </section>
-
-  <!-- segunda sessão  -->
-
   <section class="min-h-screen flex flex-col bg-slate-300">
-    <!-- texto titulo 2 sessao -->
-    <div class="flex flex-col mt-10 text-center">
+    <div class="flex flex-col mt-10 lg:mt-16 text-center">
       <h2 class="font-['Open_Sans'] text-xl lg:text-4xl text-gray-800 font-bold lg:mb-10">
         Pesquise personagens, locais e episódios
       </h2>
     </div>
-    <!-- texto subtitulo -->
-    <div class=" font-semibold mt-7 text-lg text-gray-700 lg:text-3xl text-center lg:text-start lg:ml-56 lg:mt-36">
-      <h2 class="font-['Open_Sans']">Personagens</h2>
-    </div>
-    <!-- container -->
-    <div class="grid lg:grid lg:grid-cols-2 mt-3 lg:justify-start lg:ml-56">
-      <!-- card foto + card -->
-      <div class="flex mx-2 lg:mx-auto border border-gray-300 pr-12 lg:pr-56 lg:ml-0 rounded-lg shadow-lg lg:col-span-1 ">
+    <div class="lg:mt-20 items-center lg:mx-1 min-h-screen">
+      <div class=" font-semibold mt-7 text-lg text-gray-700 lg:text-3xl text-center lg:text-start lg:ml-56 lg:mt-52">
+        <h2 class="font-['Open_Sans']">Personagens</h2>
+      </div>
+      <div class="grid lg:grid lg:grid-cols-2 mt-3 lg:justify-start lg:ml-56">
+        <div class="flex mx-2 lg:mx-auto border border-gray-300 pr-12 lg:pr-64 lg:ml-0 rounded-lg shadow-lg lg:col-span-1" id="card-personagens">
+          <div>
+            <img class="relative w-44 h-52 lg:w-60 lg:h-60" src="./assets/cover-rick.jpeg" alt="Imagem dos personagens">
+          </div>
+          <div class="lg:ml-2 p-4 lg:p-6 flex flex-col justify-center lg:col-span-1">
+            <h2 class="text-gray-500 font-semibold text-lg lg:text-xl">Personagem:</h2>
+            <p class="text-xl lg:text-2xl">texto1</p>
+            <h2 class="text-gray-500 font-semibold text-lg lg:text-xl">Espécie:</h2>
+            <p class="text-xl lg:text-2xl">texto1</p>
+            <h2 class="text-gray-500 font-semibold text-lg lg:text-xl">Localização:</h2>
+            <p class="text-xl lg:text-2xl">texto1</p>
+          </div>
+        </div>
+        <div class="hidden lg:flex lg:-mt-36 lg:mr-36 lg:-ml-36 ">
+          <img class="absolute lg:-mt-40 lg:w-[56rem] lg:h-[56rem]" src="./assets/rickandmorty_dedo.png" alt="Rick and Morty mostrando o dedo do meio">
+        </div>
         <div>
-          <img class="relative w-44 h-52 lg:w-60 lg:h-60" src="./assets/cover-rick.jpeg" alt="">
+          <div class="mt-3 text-center lg:text-left lg:m-0 lg:mt-3" id="select-personagens">
+            <select class="px-16 py-1 lg:px-24 rounded-lg shadow-lg text-base lg:text-xl lg:mt-1" name="" id="">
+              <option value="">Selecione o personagem</option>
+            </select>
+          </div>
         </div>
-        <div class="lg:ml-2 p-4 lg:p-6 flex flex-col justify-center lg:col-span-1">
-          <h2 class="text-gray-500 font-semibold text-lg">Personagem:</h2>
-          <p class="text-xl">texto1</p>
-          <h2 class="text-gray-500 font-semibold text-lg">Espécie:</h2>
-          <p class="text-xl">texto1</p>
-          <h2 class="text-gray-500 font-semibold text-lg">Localização:</h2>
-          <p class="text-xl">texto1</p>
-        </div>
-      </div>
-      <div class="hidden lg:flex lg:-mt-36 lg:mr-36 lg:-ml-36 ">
-        <img class="absolute lg:-mt-40 lg:w-[56rem] lg:h-[56rem]" src="./assets/rickandmorty_dedo.png" alt="">
-      </div>
-      <div class="mt-3 text-center lg:text-left lg:m-0 lg:mt-3">
-        <select class="px-16 py-1 lg:px-20 lg:py-1 rounded-lg shadow-lg text-base" name="" id="">
-          <option value="">Selecione o personagem</option>
-        </select>
       </div>
     </div>
-    </sectio>
-    <script src=" /js/app.js">
-    </script>
+    <div class="lg:mt-20 items-center lg:mx-1 min-h-screen">
+      <div class="hidden lg:flex lg:-mt-16 lg:ml-48">
+        <img class="absolute lg:-mt-40 lg:w-[56rem] lg:h-[56rem]" src="./assets/rickandmorty-planet.png" alt="Rick and Morty saindo do planeta gosmento">
+      </div>
+      <div class="items-center lg:flex lg:justify-end lg:mt-8 lg:mr-20">
+        <div class="-mt-60 lg:mt-0">
+          <div class="font-semibold text-lg text-gray-700 text-center lg:text-3xl lg:text-start lg:mb-2">
+            <h2>Localizações</h2>
+          </div>
+          <div class="flex mx-2 border border-gray-300 pr-12 lg:pr-64 lg:ml-0 rounded-lg shadow-lg lg:col-span-1" id="card-personagens">
+            <div>
+              <img class="relative w-44 h-52 lg:w-60 lg:h-60" src="./assets/maxresdefault.jpg" alt="Imagem dos personagens">
+            </div>
+            <div class="lg:ml-2 p-4 lg:p-6 flex flex-col justify-center lg:col-span-1">
+              <h2 class="text-gray-500 font-semibold text-lg lg:text-xl">Localização:</h2>
+              <p class="text-xl lg:text-2xl">texto1</p>
+              <h2 class="text-gray-500 font-semibold text-lg lg:text-xl">Tipo:</h2>
+              <p class="text-xl lg:text-2xl">texto1</p>
+              <h2 class="text-gray-500 font-semibold text-lg lg:text-xl">Dimensão:</h2>
+              <p class="text-xl lg:text-2xl">texto1</p>
+            </div>
+          </div>
+          <div class="lg:flex-col">
+            <div class="mt-3 text-center lg:text-left lg:m-0 lg:mt-3" id="select-personagens">
+              <select class="px-16 py-1 lg:px-24 lg:text-center rounded-lg shadow-lg text-base lg:text-xl lg:mt-1 mb-3" name="" id="">
+                <option value="">Selecione a Localização</option>
+              </select>
+              <div class="lg:flex-col">
+                <select class="px-16 py-1 lg:px-24 lg:text-center rounded-lg shadow-lg text-base lg:text-xl lg:mt-1" name="" id="">
+                  <option value="">Selecione o personagem</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lg:mt-[34rem]">
+        <div class="lg:mt-20 items-center lg:mx-1 min-h-screen">
+          <div class=" font-semibold mt-7 text-lg text-gray-700 lg:text-3xl text-center lg:text-start lg:ml-56 lg:mt-52">
+            <h2 class="font-['Open_Sans']">Episódios</h2>
+          </div>
+          <div class="grid lg:grid lg:grid-cols-2 mt-3 lg:justify-start lg:ml-56">
+            <div class="flex mx-2 lg:mx-auto border border-gray-300 pr-12 lg:pr-64 lg:ml-0 rounded-lg shadow-lg lg:col-span-1" id="card-personagens">
+              <div>
+                <img class="relative w-44 h-52 lg:w-60 lg:h-60" src="./assets/Rick-and-Morty-Planetina.jpg" alt="Imagem dos personagens">
+              </div>
+              <div class="lg:ml-2 p-4 lg:p-6 flex flex-col justify-center lg:col-span-1">
+                <h2 class="text-gray-500 font-semibold text-lg lg:text-xl">Personagem:</h2>
+                <p class="text-xl lg:text-2xl">texto1</p>
+                <h2 class="text-gray-500 font-semibold text-lg lg:text-xl">Espécie:</h2>
+                <p class="text-xl lg:text-2xl">texto1</p>
+                <h2 class="text-gray-500 font-semibold text-lg lg:text-xl">Localização:</h2>
+                <p class="text-xl lg:text-2xl">texto1</p>
+              </div>
+            </div>
+            <div class="hidden lg:flex lg:-mt-36 lg:mr-32 lg:-ml-24 ">
+              <img class="absolute lg:-mt-40 lg:w-[54rem] lg:h-[54rem]" src="./assets/Crashing_Ship.png" alt="Rick and Morty mostrando o dedo do meio">
+            </div>
+            <div>
+              <div class="mt-3 text-center lg:text-left lg:m-0 lg:mt-3" id="select-personagens">
+                <select class="px-16 py-1 lg:px-24 rounded-lg shadow-lg text-base lg:text-xl lg:mt-1" name="" id="">
+                  <option value="">Selecione o personagem</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src=" /js/app.js"></script>
 </body>
 
 </html>
