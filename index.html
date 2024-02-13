@@ -39,22 +39,22 @@
         Pesquise personagens, locais e episódios
       </h2>
     </div>
-    <div class="lg:mt-20 items-center lg:mx-1 min-h-screen">
+    <div class="lg:mt-20 items-center lg:mx-1 min-h-screen" id="personagem-card">
       <div class=" font-semibold mt-7 text-lg text-gray-700 lg:text-3xl text-center lg:text-start lg:ml-56 lg:mt-52">
         <h2 class="font-['Open_Sans']">Personagens</h2>
       </div>
       <div class="grid lg:grid lg:grid-cols-2 mt-3 lg:justify-start lg:ml-56">
         <div class="flex mx-2 lg:mx-auto border border-gray-300 pr-12 lg:pr-64 lg:ml-0 rounded-lg shadow-lg lg:col-span-1" id="card-personagens">
           <div>
-            <img class="relative w-44 h-52 lg:w-60 lg:h-60" src="./assets/cover-rick.jpeg" alt="Imagem dos personagens">
+            <img class="relative w-44 h-52 lg:w-60 lg:h-60" id="imagem-do-personagem" src="./assets/cover-rick.jpeg" alt="Imagem dos personagens">
           </div>
           <div class="lg:ml-2 p-4 lg:p-6 flex flex-col justify-center lg:col-span-1">
             <h2 class="text-gray-500 font-semibold text-lg lg:text-xl">Personagem:</h2>
-            <p class="text-xl lg:text-2xl">texto1</p>
+            <p class="text-xl lg:text-2xl" id="nome-personagem">texto1</p>
             <h2 class="text-gray-500 font-semibold text-lg lg:text-xl">Espécie:</h2>
-            <p class="text-xl lg:text-2xl">texto1</p>
+            <p class="text-xl lg:text-2xl" id="nome-especie">texto1</p>
             <h2 class="text-gray-500 font-semibold text-lg lg:text-xl">Localização:</h2>
-            <p class="text-xl lg:text-2xl">texto1</p>
+            <p class="text-xl lg:text-2xl" id="nome-localizacao">texto1</p>
           </div>
         </div>
         <div class="hidden lg:flex lg:-mt-36 lg:mr-36 lg:-ml-36 ">
@@ -62,7 +62,7 @@
         </div>
         <div>
           <div class="mt-3 text-center lg:text-left lg:m-0 lg:mt-3" id="select-personagens">
-            <select class="px-16 py-1 lg:px-auto rounded-lg shadow-lg text-base lg:text-xl lg:mt-1" name="" id="">
+            <select class="px-16 py-1 lg:px-auto rounded-lg shadow-lg text-base lg:text-xl lg:mt-1" name="" id="botao-personagem">
               <option value="">Selecione o personagem</option>
             </select>
           </div>
