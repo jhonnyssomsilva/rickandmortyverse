@@ -39,6 +39,17 @@ document.addEventListener("DOMContentLoaded", function () {
       option.textContent = character.name;
       selectPersonagem.appendChild(option);
     });
+
+    // Atualizar as informações do primeiro personagem no card
+    updateCharacterInfo(characters[0]);
+  }
+
+  // Função para atualizar as informações do personagem no card
+  function updateCharacterInfo(character) {
+    nomePersonagem.textContent = character.name;
+    nomeEspecie.textContent = character.species;
+    nomeLocalizacao.textContent = character.location.name;
+    imagemPersonagem.src = character.image;
   }
 
   // Event listener para chamar a função de preencher o select quando a página carregar
@@ -52,10 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     const characterData = await characterResponse.json();
 
-    // Atualizar as informações do personagem nos elementos HTML
-    nomePersonagem.textContent = characterData.name;
-    nomeEspecie.textContent = characterData.species;
-    nomeLocalizacao.textContent = characterData.location.name;
-    imagemPersonagem.src = characterData.image;
+    // Atualizar as informações do personagem no card
+    updateCharacterInfo(characterData);
   });
 });
