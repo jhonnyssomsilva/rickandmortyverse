@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const nomeLocalizacao = document.getElementById("nome-localizacao");
   const imagemPersonagem = document.getElementById("imagem-do-personagem");
 
-  // Função para obter todos os personagens da API, considerando a paginação
   async function getAllCharacters() {
     let allCharacters = [];
     let nextPage = "https://rickandmortyapi.com/api/character";

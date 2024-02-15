@@ -11,44 +11,44 @@
   <title>RickAndMortyVerse</title>
 </head>
 
-<body class="bg-black">
-  <section class="relative min-h-screen flex flex-col justify-center items-center">
+<body class="font-['Open_Sans']">
+  <section class="min-h-screen min-w-screen grid col-span-1 justify-center items-center">
     <div class="absolute inset-0 z-0">
-      <video class="absolute inset-0 lg:w-full lg:h-full h-full w-full object-cover" autoplay muted loop id="videoBG">
+      <video class="absolute inset-0 lg:w-full lg:h-full w-full h-full object-cover" autoplay muted loop id="videoBG">
         <source src="./assets/mylivewallpapers.com-Rick-and-Morty-Run-the-Jewels.mp4" type="video/mp4" />
       </video>
       <div class="absolute inset-0 bg-black opacity-60"></div>
     </div>
-    <div class="absolute top-0 left-0 w-full text-white text-center">
+    <div class="absolute top-0 w-full text-center">
       <img src="./assets/logo_top.webp" class="mx-auto my-4 w-48 lg:w-72" alt="Logo Rick And Morty" />
     </div>
-    <div class="z-10 relative">
-      <div class="flex flex-col justify-center items-center text-white text-center">
-        <h2 class="font-['Open_Sans'] text-3xl lg:text-7xl text-white font-bold mb-2 lg:mb-4 opacity-70">
+    <div class="relative">
+      <div class="text-white">
+        <h2 class="text-3xl lg:text-7xl text-white font-bold mb-2 lg:mb-4 opacity-70">
           Rick and Morty Verse
         </h2>
-        <h2 class="font-['Open_Sans'] text-sm lg:text-3xl">
+        <h2 class="text-center text-xl lg:text-3xl">
           Explore o universo da série Rick And Morty
         </h2>
       </div>
     </div>
   </section>
-  <section class="min-h-screen flex flex-col bg-slate-300">
-    <div class="flex flex-col mt-10 lg:mt-16 text-center">
-      <h2 class="font-['Open_Sans'] text-xl lg:text-4xl text-gray-800 font-bold lg:mb-10">
+  <section class="min-h-screen min-w-screen grid lg:grid bg-slate-200">
+    <div class="mt-10 mb-7 lg:mt-20 lg:mb-32">
+      <h2 class="text-2xl text-center text-gray-800 font-bold lg:text-4xl ">
         Pesquise personagens, locais e episódios
       </h2>
     </div>
-    <div class="lg:mt-20 items-center lg:mx-1 min-h-screen" id="personagem-card">
-      <div class=" font-semibold mt-7 text-lg text-gray-700 lg:text-3xl text-center lg:text-start lg:ml-56 lg:mt-52">
-        <h2 class="font-['Open_Sans']">Personagens</h2>
+    <div class="grid" id="personagem-card">
+      <div class="font-semibold text-xl text-center text-gray-700 lg:text-3xl lg:text-start lg:ml-56 lg:mt-36 lg:mb-4">
+        <h2>Personagens</h2>
       </div>
-      <div class="grid lg:grid lg:grid-cols-2 mt-3 lg:justify-start lg:ml-56">
-        <div class="flex mx-2 lg:mx-auto border border-gray-300 pr-12 lg:pr-64 lg:ml-0 rounded-lg shadow-lg lg:col-span-1" id="card-personagens">
+      <div class="grid lg:grid-cols-2 lg:items-start">
+        <div class="flex border border-gray-300 rounded-lg shadow-2xl lg:ml-56 lg:col-span-1" id="card-personagens">
           <div>
-            <img class="relative w-44 h-52 lg:w-60 lg:h-60" id="imagem-do-personagem" src="./assets/cover-rick.jpeg" alt="Imagem dos personagens">
+            <img class="relative rounded-l-lg w-44 h-52 lg:w-60 lg:h-64" id="imagem-do-personagem" src="./assets/cover-rick.jpeg" alt="Imagem dos personagens">
           </div>
-          <div class="lg:ml-2 p-4 lg:p-6 flex flex-col justify-center lg:col-span-1">
+          <div class=" pl-5 mt-4 lg:py-5">
             <h2 class="text-gray-500 font-semibold text-lg lg:text-xl">Personagem:</h2>
             <p class="text-xl lg:text-2xl" id="nome-personagem">texto1</p>
             <h2 class="text-gray-500 font-semibold text-lg lg:text-xl">Espécie:</h2>
@@ -57,105 +57,98 @@
             <p class="text-xl lg:text-2xl" id="nome-localizacao">texto1</p>
           </div>
         </div>
-        <div class="hidden lg:flex lg:-mt-36 lg:mr-36 lg:-ml-36 ">
-          <img class="absolute lg:-mt-40 lg:w-[56rem] lg:h-[56rem]" src="./assets/rickandmorty_dedo.png" alt="Rick and Morty mostrando o dedo do meio">
+        <div class="hidden lg:flex lg:justify-center lg:-mt-80">
+          <img class="rounded-l-lg lg:w-[52rem] lg:h-[52rem]" src="./assets/rickandmorty_dedo.png" alt="Rick and Morty mostrando o dedo do meio">
         </div>
+        <div class="lg:ml-56 lg:-mt-56" id="select-personagens">
+          <select class="lg:border border-gray-300 rounded-lg shadow-lg text-base lg:text-xl lg:p-1" name="" id="botao-personagem">
+            <option value="">Selecione o personagem</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="min-h-screen grid grid-cols-2 bg-slate-200">
+    <div class="col-span-2 lg:mt-40"></div>
+    <div class="col-span-1">
+      <div class="hidden lg:block">
+        <img class="lg:-mt-40 lg:ml-36 lg:w-[52rem] lg:h-[52rem]" src="./assets/rickandmorty-planet.png" alt="Rick and Morty saindo do planeta gosmento">
+      </div>
+    </div>
+    <div class="col-span-1">
+      <div class="font-semibold text-lg mb-3 text-gray-700 lg:text-3xl lg:text-start lg:mb-4">
+        <h2>Localizações</h2>
+      </div>
+      <div class="lg:flex">
+        <div class="flex border border-gray-300 rounded-lg shadow-2xl lg:pr-96" id="card-localizacao">
+          <div>
+            <img class="relative rounded-l-lg w-44 h-52 lg:w-60 lg:h-64" id="imagem-do-personagem" src="./assets/maxresdefault.jpg" alt="Imagem dos personagens">
+          </div>
+          <div class=" pl-5 mt-4 lg:py-5">
+            <h2 class="text-gray-500 font-semibold text-lg lg:text-xl">Localização:</h2>
+            <p class="text-xl lg:text-2xl" id="nome-id-localizacao">texto1</p>
+            <h2 class="text-gray-500 font-semibold text-lg lg:text-xl">Tipo:</h2>
+            <p class="text-xl lg:text-2xl" id="nome-tipo">texto1</p>
+            <h2 class="text-gray-500 font-semibold text-lg lg:text-xl">Dimensão:</h2>
+            <p class="text-xl lg:text-2xl" id="nome-dimensao">texto1</p>
+          </div>
+        </div>
+      </div>
+      <div class="lg:mt-8 lg:pr-96 lg:grid">
+        <select class="border border-gray-300 rounded-lg shadow-lg text-base lg:text-xl lg:p-1 lg:mb-5" name="" id="botao-localizacao">
+          <option value="">Selecione a localização</option>
+        </select>
+        <select class="border border-gray-300 rounded-lg shadow-lg text-base lg:text-xl lg:p-1" name="" id="botao-localizacao-personagem">
+          <option value="">Selecione um personagem</option>
+        </select>
+      </div>
+    </div>
+  </section>
+  <section class="min-h-screen grid grid-cols-2 bg-slate-200 lg:mb-36">
+    <div class="col-span-2 lg:mt-24"></div>
+    <div class="lg:grid-cols-2 col-span-1">
+      <div class="font-semibold text-xl text-center text-gray-700 lg:text-3xl lg:text-start lg:ml-56 lg:mb-4">
+        <h2>Episódios</h2>
+      </div>
+      <div class="flex border border-gray-300 rounded-lg shadow-2xl lg:ml-56" id="card-personagens">
         <div>
-          <div class="mt-3 text-center lg:text-left lg:m-0 lg:mt-3" id="select-personagens">
-            <select class="px-16 py-1 lg:px-auto rounded-lg shadow-lg text-base lg:text-xl lg:mt-1" name="" id="botao-personagem">
-              <option value="">Selecione o personagem</option>
-            </select>
-          </div>
+          <img class="rounded-l-lg w-44 h-52 lg:w-60 lg:h-64" id="imagem-do-personagem" src="./assets/Rick-and-Morty-Planetina.jpg" alt="Imagem dos personagens">
         </div>
+        <div class=" pl-5 mt-4 lg:py-5">
+          <h2 class="text-gray-500 font-semibold text-lg lg:text-xl">Nome:</h2>
+          <p class="text-xl lg:text-2xl" id="nome-episodio">texto1</p>
+          <h2 class="text-gray-500 font-semibold text-lg lg:text-xl">Tag:</h2>
+          <p class="text-xl lg:text-2xl" id="nome-tag">texto1</p>
+          <h2 class="text-gray-500 font-semibold text-lg lg:text-xl">Data de envio:</h2>
+          <p class="text-xl lg:text-2xl" id="nome-lancamento">texto1</p>
+        </div>
+      </div>
+      <div class="lg:ml-56 lg:mt-8 lg:pr-56 lg:grid">
+        <select class="border border-gray-300 rounded-lg shadow-lg text-base lg:text-xl lg:p-1 lg:mb-5" name="" id="botao-episodio">
+          <option value="">Selecione um episódio</option>
+        </select>
+        <select class="border border-gray-300 rounded-lg shadow-lg text-base lg:text-xl lg:p-1" name="" id="botao-episodio-personagem">
+          <option value="">Selecione um personagem</option>
+        </select>
       </div>
     </div>
-    <div class="lg:mt-20 items-center lg:mx-1 min-h-screen -mt-28">
-      <div class="hidden lg:flex lg:-mt-16 lg:ml-48">
-        <img class="absolute lg:-mt-40 lg:w-[56rem] lg:h-[56rem]" src="./assets/rickandmorty-planet.png" alt="Rick and Morty saindo do planeta gosmento">
+    <div class="lg:flex lg:justify-end lg:-mt-56 lg:mb-44 lg:mr-24">
+      <div class="hidden lg:block">
+        <img class="lg:w-[48rem] lg:h-[48rem]" src="./assets/Crashing_Ship.png" alt="Rick and Morty mostrando o dedo do meio">
       </div>
-      <div class="items-center lg:flex lg:justify-end lg:mt-8 lg:mr-20">
-        <div class="-mt-80 lg:mt-0">
-          <div class="font-semibold text-lg mb-3 text-gray-700 text-center lg:text-3xl lg:text-start lg:mb-2">
-            <h2>Localizações</h2>
-          </div>
-          <div class="flex mx-2 border border-gray-300 pr-12 lg:pr-64 lg:ml-0 rounded-lg shadow-lg lg:col-span-1" id="card-personagens">
-            <div>
-              <img class="relative w-44 h-52 lg:w-60 lg:h-60" src="./assets/maxresdefault.jpg" alt="Imagem dos personagens">
-            </div>
-            <div class="lg:ml-2 p-4 lg:p-6 flex flex-col justify-center lg:col-span-1">
-              <h2 class="text-gray-500 font-semibold text-lg lg:text-xl">Localização:</h2>
-              <p class="text-xl lg:text-2xl">texto1</p>
-              <h2 class="text-gray-500 font-semibold text-lg lg:text-xl">Tipo:</h2>
-              <p class="text-xl lg:text-2xl">texto1</p>
-              <h2 class="text-gray-500 font-semibold text-lg lg:text-xl">Dimensão:</h2>
-              <p class="text-xl lg:text-2xl">texto1</p>
-            </div>
-          </div>
-          <div class="lg:flex-col">
-            <div class="mt-3 text-center lg:text-left lg:m-0 lg:mt-3" id="select-personagens">
-              <select class="px-16 py-1 lg:px-auto lg:text-center rounded-lg shadow-lg text-base lg:text-xl lg:mt-1 mb-3" name="" id="">
-                <option value="">Selecione a Localização</option>
-              </select>
-              <div class="lg:flex-col">
-                <select class="px-16 py-1 lg:px-auto lg:text-center rounded-lg shadow-lg text-base lg:text-xl lg:mt-1" name="" id="">
-                  <option value="">Selecione o personagem</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="lg:mt-[34rem]">
-        <div class="lg:mt-20 items-center lg:mx-1 min-h-screen mt-28">
-          <div class=" font-semibold mt-7 text-lg text-gray-700 lg:text-3xl text-center lg:text-start lg:ml-56 lg:mt-52">
-            <h2 class="font-['Open_Sans']">Episódios</h2>
-          </div>
-          <div class="grid lg:grid lg:grid-cols-2 mt-3 lg:justify-start lg:ml-56">
-            <div class="flex mx-2 lg:mx-auto border border-gray-300 pr-12 lg:pr-64 lg:ml-0 rounded-lg shadow-lg lg:col-span-1" id="card-personagens">
-              <div>
-                <img class="relative w-44 h-52 lg:w-60 lg:h-60" src="./assets/Rick-and-Morty-Planetina.jpg" alt="Imagem dos personagens">
-              </div>
-              <div class="lg:ml-2 p-4 lg:p-6 flex flex-col justify-center lg:col-span-1">
-                <h2 class="text-gray-500 font-semibold text-lg lg:text-xl">Nome:</h2>
-                <p class="text-xl lg:text-2xl">texto1</p>
-                <h2 class="text-gray-500 font-semibold text-lg lg:text-xl">Tag:</h2>
-                <p class="text-xl lg:text-2xl">texto1</p>
-                <h2 class="text-gray-500 font-semibold text-lg lg:text-xl">Lançamento:</h2>
-                <p class="text-xl lg:text-2xl">texto1</p>
-              </div>
-            </div>
-            <div class="hidden lg:flex lg:-mt-36 lg:mr-32 lg:-ml-24 ">
-              <img class="absolute lg:-mt-40 lg:w-[54rem] lg:h-[54rem]" src="./assets/Crashing_Ship.png" alt="Rick and Morty mostrando o dedo do meio">
-            </div>
-            <div class="lg:flex-col">
-              <div class="mt-3 text-center lg:text-left lg:m-0 lg:mt-3" id="select-personagens">
-                <select class="px-16 py-1 lg:px-auto lg:text-center rounded-lg shadow-lg text-base lg:text-xl lg:mt-1 mb-3" name="" id="">
-                  <option value="">Selecione o episódio</option>
-                </select>
-                <div class="lg:flex-col">
-                  <select class="px-12 py-1 lg:px-auto lg:text-center rounded-lg shadow-lg text-base lg:text-xl lg:mt-1" name="" id="">
-                    <option value="">Selecione o personagem</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </section>
   <footer class="bg-gradient-to-t from-green-950 to-green-600 grid-cols-2 lg:-mt-36 -mt-36">
     <div class="flex justify-center lg:flex lg:justify-end lg:mr-36 ">
       <img class="opacity-10 lg:mr-28" src="./assets/58f37720a4fa116215a9240f.png" alt="">
       <h2 class="absolute mt-4 text-center text-white text-lg lg:mt-24 lg:text-3xl lg:text-gray-200"><a href="https://rickandmortyapi.com/api"></a>Site desenvolvido usando: https://rickandmortyapi.com/api</h2>
       <h2 class="absolute mt-20 text-sm lg:text-lg lg:mt-56 lg:mr-28 text-gray-200">Feito por Jhonnyssom Silva</h2>
-      <a href="https://github.com/jhonnyssomsilva" class="absolute filter brightness-0 invert opacity-90 w-6 h-6 mt-28 ml-10 lg:ml-10 lg:w-10 lg:h-10 lg:mt-52 "><img class="" src="./assets/25231.png" alt=""></a>
+      <a href="https://github.com/jhonnyssomsilva" class="absolute filter brightness-0 invert opacity-90 w-6 h-6 mt-28 ml-10 lg:ml-10 lg:w-10 lg:h-10 lg:mt-52 "><img src="./assets/25231.png" alt=""></a>
       <a href="https://www.instagram.com/felipecrim/" class="absolute filter brightness-0 invert opacity-90 w-6 h-6 mt-28 mr-10 lg:mr-14 lg:w-10 lg:h-10 lg:mt-52"><img src="./assets/3661391.png" alt=""></a>
     </div>
     <div class="relative lg:-mt-96 lg:ml-32 hidden lg:block">
       <img class="lg:w-[40rem] lg:h-[28rem]" src="./assets/rickandmorty_footer.png" alt="">
     </div>
-    <script src=" /js/app.js"></script>
+    <script src="/js/app.js"></script>
   </footer>
 
 </body>
