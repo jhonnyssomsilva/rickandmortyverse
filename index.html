@@ -71,7 +71,7 @@
       </div>
     </div>
   </section>
-  <section class="grid lg:grid-cols-2 items-center mt-36 lg:-mt-32  lg:min-h-screen">
+  <section class="grid lg:grid-cols-2 items-center mt-36 lg:-mt-32  lg:min-h-screen" id="localizacao-card">
     <div class="hidden lg:block col-span-1 lg:ml-5">
       <img class="relative lg:w-[52rem] lg:h-[52rem]" src="./assets/rickandmorty-planet.png" alt="">
     </div>
@@ -79,57 +79,57 @@
       <div class="mb-3 lg:mb-4">
         <h2 class="font-semibold text-base text-center tracking-wide text-gray-600 lg:text-3xl lg:text-start lg:ml-3">Localizações</h2>
       </div>
-      <div class="flex border border-gray-300 rounded-lg shadow-2xl m-3 lg:mr-28" id="card-personagens">
+      <div class="flex border border-gray-300 rounded-lg shadow-2xl m-3 lg:mr-28" id="card-localizacao">
         <div>
-          <img class="relative rounded-l-lg w-44 h-44 lg:w-60 lg:h-64" id="imagem-do-personagem" src="./assets/maxresdefault.jpg" alt="Imagem dos personagens">
+          <img class="relative rounded-l-lg w-44 h-44 lg:w-60 lg:h-64" src="./assets/maxresdefault.jpg" alt="Imagem padrão do planeta">
         </div>
         <div class=" pl-4 mt-auto mb-auto">
           <h2 class="text-gray-500 font-semibold text-sm tracking-widest lg:text-xl">Localização:</h2>
-          <p class="text-red-800 text-base lg:text-2xl" id="nome-personagem">texto1</p>
+          <p class="text-red-800 text-base lg:text-2xl" id="localizacao-localizacao">texto1</p>
           <h2 class="text-gray-500 font-semibold text-sm tracking-widest lg:text-xl">Tipo:</h2>
-          <p class="text-red-800 text-base lg:text-2xl" id="nome-especie">texto1</p>
+          <p class="text-red-800 text-base lg:text-2xl" id="localizacao-tipo">texto1</p>
           <h2 class="text-gray-500 font-semibold text-sm tracking-widest lg:text-xl">Dimensão:</h2>
-          <p class="text-red-800 text-base lg:text-2xl" id="nome-localizacao">texto1</p>
+          <p class="text-red-800 text-base lg:text-2xl" id="localizacao-dimensao">texto1</p>
         </div>
       </div>
       <div class="mt-1 text-center lg:text-left lg:ml-3 lg:mt-8 lg:grid lg:mr-52">
         <h2 class="text-sm mb-2 tracking-wide lg:text-xl">Pesquise por localização</h2>
         <div class="mx-4 lg:ml-0">
-          <select class="w-full p-1 text-xs lg:text-xl border border-gray-300 rounded-lg shadow-lg" name="" id="botao-episodio">
+          <select class="w-full p-1 text-xs lg:text-xl border border-gray-300 rounded-lg shadow-lg" name="" id="botao-localizacao">
             <option value="">Selecione uma localização</option>
           </select>
         </div>
         <h2 class="text-sm mb-2 mt-2 lg:mt-2 tracking-wide lg:text-xl">Personagem dessa localização</h2>
         <div class="mx-4 lg:ml-0">
-          <select class="w-full p-1 text-xs lg:text-xl border border-gray-300 rounded-lg shadow-lg" name="" id="botao-episodio-personagem">
+          <select class="w-full p-1 text-xs lg:text-xl border border-gray-300 rounded-lg shadow-lg" name="" id="botao-localizacao-personagem">
             <option value="">Selecione um personagem</option>
           </select>
         </div>
       </div>
     </div>
   </section>
-  <section class="min-h-screen mt-36 lg:mt-0 lg:grid lg:grid-cols-2 bg-slate-200 items-center">
+  <section class="lg:min-h-screen mt-36 mb-60 lg:mt-0 lg:grid lg:grid-cols-2 bg-slate-200 items-center">
     <div class="lg:grid-cols-2 lg:col-span-1">
       <div class="font-semibold text-base text-center tracking-wide text-gray-600 lg:text-3xl lg:text-start lg:ml-56">
         <h2>Episódios</h2>
       </div>
       <div class="flex border border-gray-300 rounded-lg shadow-2xl m-3 lg:ml-56" id="card-personagens">
         <div>
-          <img class="relative rounded-l-lg w-44 h-44 lg:w-60 lg:h-64" id="imagem-do-personagem" src="./assets/Rick-and-Morty-Planetina.jpg" alt="Imagem dos personagens">
+          <img class="relative rounded-l-lg w-44 h-44 lg:w-60 lg:h-64" id="imagem-do-personagem" src="./assets/Rick-and-Morty-Planetina.jpg" alt="Imagem padrão de episodios">
         </div>
         <div class=" pl-4 mt-auto mb-auto">
-          <h2 class="text-gray-500 font-semibold text-sm tracking-widest lg:text-xl">Personagem:</h2>
-          <p class="text-red-800 text-base lg:text-2xl" id="nome-personagem">texto1</p>
-          <h2 class="text-gray-500 font-semibold text-sm tracking-widest lg:text-xl">Espécie:</h2>
-          <p class="text-red-800 text-base lg:text-2xl" id="nome-especie">texto1</p>
-          <h2 class="text-gray-500 font-semibold text-sm tracking-widest lg:text-xl">Localização:</h2>
-          <p class="text-red-800 text-base lg:text-2xl" id="nome-localizacao">texto1</p>
+          <h2 class="text-gray-500 font-semibold text-sm tracking-widest lg:text-xl">Nome:</h2>
+          <p class="text-red-800 text-base lg:text-2xl" id="episodio-nome">texto1</p>
+          <h2 class="text-gray-500 font-semibold text-sm tracking-widest lg:text-xl">Tag:</h2>
+          <p class="text-red-800 text-base lg:text-2xl" id="episodio-tag">texto1</p>
+          <h2 class="text-gray-500 font-semibold text-sm tracking-widest lg:text-xl">Data de envio:</h2>
+          <p class="text-red-800 text-base lg:text-2xl" id="episodio-data">texto1</p>
         </div>
       </div>
-      <div class="mt-5 text-center lg:text-left lg:ml-56" id="select-personagens">
+      <div class="mt-5 text-center lg:text-left lg:ml-56" id="">
         <h2 class="text-sm mb-2 tracking-wide lg:text-xl">Pesquise por episódios</h2>
         <div class="mx-4 lg:ml-0">
-          <select class="w-full p-1 text-xs lg:text-xl border border-gray-300 rounded-lg shadow-lg" name="" id="botao-personagem">
+          <select class="w-full p-1 text-xs lg:text-xl border border-gray-300 rounded-lg shadow-lg" name="" id="botao-pesquisar-episodio">
             <option value="">Selecione um episódio</option>
           </select>
         </div>
@@ -137,7 +137,7 @@
       <div class="mt-2 text-center lg:text-left lg:ml-56" id="select-personagens">
         <h2 class="text-sm mb-2 tracking-wide lg:text-xl">Personagens desse episódio</h2>
         <div class="mx-4 lg:ml-0">
-          <select class="w-full p-1 text-xs lg:text-xl border border-gray-300 rounded-lg shadow-lg" name="" id="botao-personagem">
+          <select class="w-full p-1 text-xs lg:text-xl border border-gray-300 rounded-lg shadow-lg" name="" id="botao-pesquisar-personagem">
             <option value="">Selecione o personagem</option>
           </select>
         </div>
