@@ -5,65 +5,62 @@ document.addEventListener("DOMContentLoaded", function () {
   const nomeLocalizacao = document.getElementById("nome-localizacao");
   const imagemPersonagem = document.getElementById("imagem-do-personagem");
 
-  async function getAllCharacters() {
-    let allCharacters = [];
-    let nextPage = "https://rickandmortyapi.com/api/character";
+  async function puxarTodosPersonagens() {
+    let todosPersonagens = [];
+    let proximaPagina = "https://rickandmortyapi.com/api/character";
 
-    // Loop para solicitar todas as páginas até que não haja mais páginas a serem buscadas
-    while (nextPage) {
-      const response = await fetch(nextPage);
+    while (proximaPagina) {
+      const response = await fetch(proximaPagina);
       const data = await response.json();
 
-      // Adicionar os personagens desta página à lista de todos os personagens
-      allCharacters = allCharacters.concat(data.results);
+      todosPersonagens = todosPersonagens.concat(data.results);
 
-      // Verificar se há próxima página
-      nextPage = data.info.next;
+      proximaPagina = data.info.next;
     }
 
-    return allCharacters;
+    return todosPersonagens;
   }
 
-  // Função para preencher o select de personagens com todos os personagens obtidos
-  async function populateCharacterSelect() {
-    const characters = await getAllCharacters();
+  // Função para preencher o select de personagens com todos os personagens puxados
+  async function preencherSelect() {
+    const personagens = await puxarTodosPersonagens();
 
     // Limpar opções anteriores
     selectPersonagem.innerHTML = "";
 
     // Adicionar uma opção para cada personagem
-    characters.forEach((character) => {
+    personagens.forEach((personagens) => {
       const option = document.createElement("option");
-      option.value = character.id;
-      option.textContent = character.name;
+      option.value = personagens.id;
+      option.textContent = personagens.name;
       selectPersonagem.appendChild(option);
     });
 
     // Atualizar as informações do primeiro personagem no card
-    updateCharacterInfo(characters[0]);
+    atualizarPersonagem(personagens[0]);
   }
 
   // Função para atualizar as informações do personagem no card
-  function updateCharacterInfo(character) {
-    nomePersonagem.textContent = character.name;
-    nomeEspecie.textContent = character.species;
-    nomeLocalizacao.textContent = character.location.name;
-    imagemPersonagem.src = character.image;
+  function atualizarPersonagem(personagem) {
+    nomePersonagem.textContent = personagem.name;
+    nomeEspecie.textContent = personagem.species;
+    nomeLocalizacao.textContent = personagem.location.name;
+    imagemPersonagem.src = personagem.image;
   }
 
   // Event listener para chamar a função de preencher o select quando a página carregar
-  populateCharacterSelect();
+  preencherSelect();
 
   // Event listener para atualizar as informações quando um personagem for selecionado
   selectPersonagem.addEventListener("change", async () => {
-    const characterId = selectPersonagem.value;
-    const characterResponse = await fetch(
-      `https://rickandmortyapi.com/api/character/${characterId}`
+    const idPersonagem = selectPersonagem.value;
+    const personagemResponse = await fetch(
+      `https://rickandmortyapi.com/api/character/${idPersonagem}`
     );
-    const characterData = await characterResponse.json();
+    const personagemData = await personagemResponse.json();
 
     // Atualizar as informações do personagem no card
-    updateCharacterInfo(characterData);
+    atualizarPersonagem(personagemData);
   });
 });
 
@@ -76,88 +73,80 @@ document.addEventListener("DOMContentLoaded", function () {
   const nomeTipo = document.getElementById("localizacao-tipo");
   const nomeDimensao = document.getElementById("localizacao-dimensao");
 
-  async function getAllLocations() {
-    let allLocations = [];
-    let nextPage = "https://rickandmortyapi.com/api/location";
+  async function puxarTodasLocalizacoes() {
+    let todasLocalizacoes = [];
+    let proximaPagina = "https://rickandmortyapi.com/api/location";
 
-    // Loop para solicitar todas as páginas até que não haja mais páginas a serem buscadas
-    while (nextPage) {
-      const response = await fetch(nextPage);
+    while (proximaPagina) {
+      const response = await fetch(proximaPagina);
       const data = await response.json();
 
-      // Adicionar as localizações desta página à lista de todas as localizações
-      allLocations = allLocations.concat(data.results);
+      todasLocalizacoes = todasLocalizacoes.concat(data.results);
 
-      // Verificar se há próxima página
-      nextPage = data.info.next;
+      proximaPagina = data.info.next;
     }
 
-    return allLocations;
+    return todasLocalizacoes;
   }
 
   // Função para preencher o select de localizações com todas as localizações obtidas
-  async function populateLocationSelect() {
-    const locations = await getAllLocations();
+  async function preencherSelectLocalizacao() {
+    const localizacoes = await puxarTodasLocalizacoes();
 
     // Limpar opções anteriores
     selectLocalizacao.innerHTML = "";
 
     // Adicionar uma opção para cada localização
-    locations.forEach((location) => {
+    localizacoes.forEach((localizacao) => {
       const option = document.createElement("option");
-      option.value = location.id;
-      option.textContent = location.name;
+      option.value = localizacao.id;
+      option.textContent = localizacao.name;
       selectLocalizacao.appendChild(option);
     });
   }
 
-  // Event listener para chamar a função de preencher o select de localizações quando a página carregar
-  populateLocationSelect();
+  preencherSelectLocalizacao();
 
-  // Event listener para atualizar os detalhes da localização e os personagens da localização quando uma localização for selecionada
   selectLocalizacao.addEventListener("change", async () => {
-    const locationId = selectLocalizacao.value;
+    const idLocalizacao = selectLocalizacao.value;
 
-    // Solicitar os detalhes da localização selecionada
     const response = await fetch(
-      `https://rickandmortyapi.com/api/location/${locationId}`
+      `https://rickandmortyapi.com/api/location/${idLocalizacao}`
     );
-    const locationData = await response.json();
+    const localizacaoData = await response.json();
 
-    // Atualizar os campos com os detalhes da localização
-    nomeLocalizacao.textContent = locationData.name;
-    nomeTipo.textContent = locationData.type;
-    nomeDimensao.textContent = locationData.dimension;
+    nomeLocalizacao.textContent = localizacaoData.name;
+    nomeTipo.textContent = localizacaoData.type;
+    nomeDimensao.textContent = localizacaoData.dimension;
 
-    // Limpar opções anteriores do select de personagens da localização
     selectPersonagemLocalizacao.innerHTML = "";
 
     // Adicionar uma opção para cada personagem da localização
-    locationData.residents.forEach(async (residentURL) => {
+    localizacaoData.residents.forEach(async (residentURL) => {
       // Obter detalhes do personagem usando a URL fornecida pela API
-      const characterResponse = await fetch(residentURL);
-      const characterData = await characterResponse.json();
+      const personagemResponse = await fetch(residentURL);
+      const personagemData = await personagemResponse.json();
 
       // Criar e adicionar uma opção para o personagem
       const option = document.createElement("option");
-      option.value = characterData.id;
-      option.textContent = characterData.name;
+      option.value = personagemData.id;
+      option.textContent = personagemData.name;
       selectPersonagemLocalizacao.appendChild(option);
     });
   });
 
   // Event listener para atualizar os personagens da localização quando um personagem da localização for selecionado
   selectPersonagemLocalizacao.addEventListener("change", async () => {
-    const characterId = selectPersonagemLocalizacao.value;
+    const idPersonagem = selectPersonagemLocalizacao.value;
 
     // Solicitar os detalhes do personagem selecionado
     const response = await fetch(
-      `https://rickandmortyapi.com/api/character/${characterId}`
+      `https://rickandmortyapi.com/api/character/${idPersonagem}`
     );
-    const characterData = await response.json();
+    const personagemData = await response.json();
 
     // Atualizar as informações do personagem no card
-    updateCharacterInfo(characterData);
+    atualizarPersonagem(personagemData);
   });
 });
 
@@ -170,78 +159,76 @@ document.addEventListener("DOMContentLoaded", function () {
   const tagEpisodio = document.getElementById("episodio-tag");
   const dataEpisodio = document.getElementById("episodio-data");
 
-  async function getAllEpisodes() {
-    let allEpisodes = [];
-    let nextPage = "https://rickandmortyapi.com/api/episode";
+  async function puxarTodosEpisodios() {
+    let todosEpisodios = [];
+    let proximaPagina = "https://rickandmortyapi.com/api/episode";
 
     // Loop para solicitar todas as páginas até que não haja mais páginas a serem buscadas
-    while (nextPage) {
-      const response = await fetch(nextPage);
+    while (proximaPagina) {
+      const response = await fetch(proximaPagina);
       const data = await response.json();
 
       // Adicionar os episódios desta página à lista de todos os episódios
-      allEpisodes = allEpisodes.concat(data.results);
+      todosEpisodios = todosEpisodios.concat(data.results);
 
       // Verificar se há próxima página
-      nextPage = data.info.next;
+      proximaPagina = data.info.next;
     }
 
-    return allEpisodes;
+    return todosEpisodios;
   }
 
   // Função para preencher o select de episódios com todos os episódios obtidos
-  async function populateEpisodeSelect() {
-    const episodes = await getAllEpisodes();
+  async function preencherSelectEpisodio() {
+    const episodios = await puxarTodosEpisodios();
 
     // Limpar opções anteriores
     selectEpisodio.innerHTML = "";
 
-    // Adicionar uma opção para cada episódio
-    episodes.forEach((episode) => {
+    // Adicionar uma opção para cada episódio787878
+    episodios.forEach((episodios) => {
       const option = document.createElement("option");
-      option.value = episode.id;
-      option.textContent = episode.name;
+      option.value = episodios.id;
+      option.textContent = episodios.name;
       selectEpisodio.appendChild(option);
     });
 
-    // Atualizar as informações do primeiro episódio no card
-    updateEpisodeInfo(episodes[0]);
+    updateEpisodeInfo(episodios[0]);
   }
 
   // Função para atualizar as informações do episódio no card
-  function updateEpisodeInfo(episode) {
-    nomeEpisodio.textContent = episode.name;
-    tagEpisodio.textContent = episode.episode;
-    dataEpisodio.textContent = episode.air_date;
+  function atualizarInfoEpisodios(episodio) {
+    nomeEpisodio.textContent = episodio.name;
+    tagEpisodio.textContent = episodio.episode;
+    dataEpisodio.textContent = episodio.air_date;
   }
 
-  // Event listener para chamar a função de preencher o select quando a página carregar
-  populateEpisodeSelect();
+  preencherSelectEpisodio();
 
   // Event listener para atualizar as informações quando um episódio for selecionado
   selectEpisodio.addEventListener("change", async () => {
-    const episodeId = selectEpisodio.value;
-    const episodeResponse = await fetch(
-      `https://rickandmortyapi.com/api/episode/${episodeId}`
+    const IdEpisodio = selectEpisodio.value;
+    const episodioResponse = await fetch(
+      `https://rickandmortyapi.com/api/episode/${IdEpisodio}`
     );
-    const episodeData = await episodeResponse.json();
+    const episodioData = await episodioResponse.json();
 
     // Atualizar as informações do episódio no card
-    updateEpisodeInfo(episodeData);
+    atualizarInfoEpisodios(episodioData);
 
     // Limpar opções anteriores do select de personagens do episódio
     selectPersonagemEpisodio.innerHTML = "";
 
     // Adicionar uma opção para cada personagem do episódio
-    episodeData.characters.forEach(async (characterURL) => {
+    episodioData.characters.forEach(async (characterURL) => {
       // Obter detalhes do personagem usando a URL fornecida pela API
-      const characterResponse = await fetch(characterURL);
-      const characterData = await characterResponse.json();
+      const personagemResponse = await fetch(characterURL);
+      const personagemData = await personagemResponse.json();
 
       // Criar e adicionar uma opção para o personagem
       const option = document.createElement("option");
-      option.value = characterData.id;
-      option.textContent = characterData.name;
+      option.value = personagemData.id;
+      option.textContent = personagemData.name;
       selectPersonagemEpisodio.appendChild(option);
     });
   });
