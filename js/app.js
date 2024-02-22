@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Limpar opções anteriores
     selectEpisodio.innerHTML = "";
 
-    // Adicionar uma opção para cada episódio787878
+    // Adicionar uma opção para cada episódio
     episodios.forEach((episodios) => {
       const option = document.createElement("option");
       option.value = episodios.id;
@@ -193,7 +193,7 @@ document.addEventListener("DOMContentLoaded", function () {
       selectEpisodio.appendChild(option);
     });
 
-    updateEpisodeInfo(episodios[0]);
+    updateEpisodeInfo(episodios);
   }
 
   // Função para atualizar as informações do episódio no card
