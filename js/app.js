@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const nomeEpisodio = document.getElementById("episodio-nome");
   const tagEpisodio = document.getElementById("episodio-tag");
   const dataEpisodio = document.getElementById("episodio-data");
+  const personagemCard = document.getElementById("personagem-card");
 
   async function puxarTodosPersonagens() {
     let todosPersonagens = [];
@@ -187,6 +188,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const personagemData = await response.json();
 
     atualizarPersonagem(personagemData);
+    personagemCard.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 
   selectPersonagemEpisodio.addEventListener("change", async () => {
@@ -198,5 +200,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const personagemData = await response.json();
 
     atualizarPersonagem(personagemData);
+    personagemCard.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 });
