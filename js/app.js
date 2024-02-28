@@ -1,9 +1,25 @@
 document.addEventListener("DOMContentLoaded", function () {
   const selectPersonagem = document.getElementById("botao-personagem");
+  const selectLocalizacao = document.getElementById("botao-localizacao");
+  const selectEpisodio = document.getElementById("botao-pesquisar-episodio");
+  const selectPersonagemLocalizacao = document.getElementById(
+    "botao-localizacao-personagem"
+  );
+  const selectPersonagemEpisodio = document.getElementById(
+    "botao-pesquisar-personagem"
+  );
   const nomePersonagem = document.getElementById("nome-personagem");
   const nomeEspecie = document.getElementById("nome-especie");
   const nomeLocalizacao = document.getElementById("nome-localizacao");
   const imagemPersonagem = document.getElementById("imagem-do-personagem");
+  const nomeLocalizacaoLocalizacao = document.getElementById(
+    "localizacao-localizacao"
+  );
+  const nomeTipo = document.getElementById("localizacao-tipo");
+  const nomeDimensao = document.getElementById("localizacao-dimensao");
+  const nomeEpisodio = document.getElementById("episodio-nome");
+  const tagEpisodio = document.getElementById("episodio-tag");
+  const dataEpisodio = document.getElementById("episodio-data");
 
   async function puxarTodosPersonagens() {
     let todosPersonagens = [];
@@ -25,45 +41,20 @@ document.addEventListener("DOMContentLoaded", function () {
     const personagens = await puxarTodosPersonagens();
 
     selectPersonagem.innerHTML = "";
+    selectPersonagemLocalizacao.innerHTML = "";
+    selectPersonagemEpisodio.innerHTML = "";
 
     personagens.forEach((personagens) => {
       const option = document.createElement("option");
       option.value = personagens.id;
       option.textContent = personagens.name;
       selectPersonagem.appendChild(option);
+      selectPersonagemLocalizacao.appendChild(option.cloneNode(true));
+      selectPersonagemEpisodio.appendChild(option.cloneNode(true));
     });
 
     atualizarPersonagem(personagens[0]);
   }
-
-  function atualizarPersonagem(personagem) {
-    nomePersonagem.textContent = personagem.name;
-    nomeEspecie.textContent = personagem.species;
-    nomeLocalizacao.textContent = personagem.location.name;
-    imagemPersonagem.src = personagem.image;
-  }
-
-  preencherSelect();
-
-  selectPersonagem.addEventListener("change", async () => {
-    const idPersonagem = selectPersonagem.value;
-    const personagemResponse = await fetch(
-      `https://rickandmortyapi.com/api/character/${idPersonagem}`
-    );
-    const personagemData = await personagemResponse.json();
-
-    atualizarPersonagem(personagemData);
-  });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const selectLocalizacao = document.getElementById("botao-localizacao");
-  const selectPersonagemLocalizacao = document.getElementById(
-    "botao-localizacao-personagem"
-  );
-  const nomeLocalizacao = document.getElementById("localizacao-localizacao");
-  const nomeTipo = document.getElementById("localizacao-tipo");
-  const nomeDimensao = document.getElementById("localizacao-dimensao");
 
   async function puxarTodasLocalizacoes() {
     let todasLocalizacoes = [];
@@ -80,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     return todasLocalizacoes;
   }
+
   async function preencherSelectLocalizacao() {
     const localizacoes = await puxarTodasLocalizacoes();
 
@@ -97,54 +89,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-
-  preencherSelectLocalizacao();
-
-  selectLocalizacao.addEventListener("change", async () => {
-    const idLocalizacao = selectLocalizacao.value;
-
-    const response = await fetch(
-      `https://rickandmortyapi.com/api/location/${idLocalizacao}`
-    );
-    const localizacaoData = await response.json();
-
-    nomeLocalizacao.textContent = localizacaoData.name;
-    nomeTipo.textContent = localizacaoData.type;
-    nomeDimensao.textContent = localizacaoData.dimension;
-
-    selectPersonagemLocalizacao.innerHTML = "";
-
-    localizacaoData.residents.forEach(async (residentURL) => {
-      const personagemResponse = await fetch(residentURL);
-      const personagemData = await personagemResponse.json();
-
-      const option = document.createElement("option");
-      option.value = personagemData.id;
-      option.textContent = personagemData.name;
-      selectPersonagemLocalizacao.appendChild(option);
-    });
-  });
-
-  selectPersonagemLocalizacao.addEventListener("change", async () => {
-    const idPersonagem = selectPersonagemLocalizacao.value;
-
-    const response = await fetch(
-      `https://rickandmortyapi.com/api/character/${idPersonagem}`
-    );
-    const personagemData = await response.json();
-
-    atualizarPersonagem(personagemData);
-  });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const selectEpisodio = document.getElementById("botao-pesquisar-episodio");
-  const selectPersonagemEpisodio = document.getElementById(
-    "botao-pesquisar-personagem"
-  );
-  const nomeEpisodio = document.getElementById("episodio-nome");
-  const tagEpisodio = document.getElementById("episodio-tag");
-  const dataEpisodio = document.getElementById("episodio-data");
 
   async function puxarTodosEpisodios() {
     let todosEpisodios = [];
@@ -177,13 +121,52 @@ document.addEventListener("DOMContentLoaded", function () {
     updateEpisodeInfo(episodios);
   }
 
+  function atualizarPersonagem(personagem) {
+    nomePersonagem.textContent = personagem.name;
+    nomeEspecie.textContent = personagem.species;
+    nomeLocalizacao.textContent = personagem.location.name;
+    imagemPersonagem.src = personagem.image;
+
+    // Atualizar o nome do personagem na botao-personagem
+    selectPersonagem.value = personagem.id;
+  }
+
+  function atualizarInfoLocalizacao(localizacao) {
+    nomeLocalizacaoLocalizacao.textContent = localizacao.name;
+    nomeTipo.textContent = localizacao.type;
+    nomeDimensao.textContent = localizacao.dimension;
+  }
+
   function atualizarInfoEpisodios(episodio) {
     nomeEpisodio.textContent = episodio.name;
     tagEpisodio.textContent = episodio.episode;
     dataEpisodio.textContent = episodio.air_date;
   }
 
+  preencherSelect();
+  preencherSelectLocalizacao();
   preencherSelectEpisodio();
+
+  selectPersonagem.addEventListener("change", async () => {
+    const idPersonagem = selectPersonagem.value;
+    const personagemResponse = await fetch(
+      `https://rickandmortyapi.com/api/character/${idPersonagem}`
+    );
+    const personagemData = await personagemResponse.json();
+
+    atualizarPersonagem(personagemData);
+  });
+
+  selectLocalizacao.addEventListener("change", async () => {
+    const idLocalizacao = selectLocalizacao.value;
+
+    const response = await fetch(
+      `https://rickandmortyapi.com/api/location/${idLocalizacao}`
+    );
+    const localizacaoData = await response.json();
+
+    atualizarInfoLocalizacao(localizacaoData);
+  });
 
   selectEpisodio.addEventListener("change", async () => {
     const IdEpisodio = selectEpisodio.value;
@@ -193,16 +176,27 @@ document.addEventListener("DOMContentLoaded", function () {
     const episodioData = await episodioResponse.json();
 
     atualizarInfoEpisodios(episodioData);
+  });
 
-    selectPersonagemEpisodio.innerHTML = "";
+  selectPersonagemLocalizacao.addEventListener("change", async () => {
+    const idPersonagem = selectPersonagemLocalizacao.value;
 
-    episodioData.characters.forEach(async (characterURL) => {
-      const personagemResponse = await fetch(characterURL);
-      const personagemData = await personagemResponse.json();
-      const option = document.createElement("option");
-      option.value = personagemData.id;
-      option.textContent = personagemData.name;
-      selectPersonagemEpisodio.appendChild(option);
-    });
+    const response = await fetch(
+      `https://rickandmortyapi.com/api/character/${idPersonagem}`
+    );
+    const personagemData = await response.json();
+
+    atualizarPersonagem(personagemData);
+  });
+
+  selectPersonagemEpisodio.addEventListener("change", async () => {
+    const idPersonagem = selectPersonagemEpisodio.value;
+
+    const response = await fetch(
+      `https://rickandmortyapi.com/api/character/${idPersonagem}`
+    );
+    const personagemData = await response.json();
+
+    atualizarPersonagem(personagemData);
   });
 });
