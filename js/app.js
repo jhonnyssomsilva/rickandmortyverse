@@ -128,7 +128,6 @@ document.addEventListener("DOMContentLoaded", function () {
     nomeLocalizacao.textContent = personagem.location.name;
     imagemPersonagem.src = personagem.image;
 
-    // Atualizar o nome do personagem na botao-personagem
     selectPersonagem.value = personagem.id;
   }
 
